@@ -1,0 +1,25 @@
+Options -Indexes
+DirectoryIndex controllers/routes.php
+
+RewriteEngine on
+
+RewriteBase /
+#Push every request to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ controllers/routes.php [QSA]
+
+<FilesMatch "\.(db)$">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+RedirectMatch 403 ^/controllers/?$
+RedirectMatch 403 ^/operations/?$
+RedirectMatch 403 ^/setup/?$
+RedirectMatch 403 ^/vendor/?$
+RedirectMatch 403 ^/views/?$
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]

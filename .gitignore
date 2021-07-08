@@ -1,0 +1,12 @@
+# Logs and databases #
+*.log
+*.sql
+*.sqlite
+*.db
+.env
+vendor/
+test*
+setup/
+/setup
+/vendor
+.env

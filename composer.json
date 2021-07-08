@@ -1,0 +1,21 @@
+{
+  "name": "powered-by-fusari/framwork",
+	"description": "Fusari Framework",
+	"type": "project",
+  "license": "mit",
+  "minimum-stability": "stable",
+	"authors": [{
+		"name": "Daniele Fusari",
+		"email": "Daniele@Fusari.co.uk"
+	}],
+  "autoload": {
+    "psr-4": {
+      "App\\": "operations/"
+    }
+  },
+	"require": {
+		"fakerphp/faker": "^1.14",
+		"vlucas/phpdotenv": "^5.3",
+		"twig/twig": "^3.3"
+	}
+}
