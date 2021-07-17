@@ -1,3 +1,4 @@
 <?php
 $operations = new App\controller\display();
-$operations->view('404');
+
+echo $twig->render('404.twig', ['name' => 'Daniele']);

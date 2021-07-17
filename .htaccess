@@ -1,5 +1,5 @@
 Options -Indexes
-DirectoryIndex controllers/routes.php
+DirectoryIndex operations/load.php
 
 RewriteEngine on
 
@@ -7,7 +7,7 @@ RewriteBase /
 #Push every request to index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ controllers/routes.php [QSA]
+RewriteRule ^(.*)$ operations/load.php [QSA]
 
 <FilesMatch "\.(db)$">
 Order allow,deny

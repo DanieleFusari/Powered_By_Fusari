@@ -4,7 +4,6 @@
 Calls for DataBase creation
  https://www.w3schools.com/php/php_mysql_intro.asp
 **************************************/
-
 class DataBase
 {
     private $servername;
