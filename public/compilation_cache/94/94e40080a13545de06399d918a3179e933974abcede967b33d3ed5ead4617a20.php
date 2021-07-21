@@ -58,12 +58,9 @@ class __TwigTemplate_4777e1051a2d15bd23a1d89e007fb5c4f8ac543fa5ab7bc1488fbfcacd8
                     <h1>Powered_By_Fusari <strong>An Easy FrameWork</strong></h1>
                     <p>This is a simple FrameWork,  Created to standerdise all my projects.
                     <br>
-                    <strong>Support packages </strong> Twig<br>
+                    <strong> Support packages </strong> Twig<br>
                     </p>
-                    <a href=\"#about\" class=\"main-button-slider\">Find Out More ";
-        // line 17
-        (((array_key_exists("name", $context) &&  !(null === ($context["name"] ?? null)))) ? (print (twig_escape_filter($this->env, ($context["name"] ?? null), "html", null, true))) : (print ("Dan")));
-        echo "</a>
+                    <a href=\"https://danielefusari.co.uk/#about\" class=\"main-button-slider\">Find Out More</a>
                 </div>
                 <div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\" data-scroll-reveal=\"enter right move 30px over 0.6s after 0.4s\">
                     <img src=\"/public/images/slider-icon.png\" class=\"rounded img-fluid d-block mx-auto\" alt=\"First Vector Graphic\">
@@ -90,7 +87,7 @@ class __TwigTemplate_4777e1051a2d15bd23a1d89e007fb5c4f8ac543fa5ab7bc1488fbfcacd8
 
     public function getDebugInfo()
     {
-        return array (  65 => 17,  50 => 4,  46 => 3,  35 => 1,);
+        return array (  50 => 4,  46 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
