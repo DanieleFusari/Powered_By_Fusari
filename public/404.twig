@@ -1,8 +1,14 @@
-<?php require __DIR__ . '/reusable/header.php' ?>
+{% extends "/layout.twig" %}
+
+
+{% block css %}
+<link rel="stylesheet" href="/public/css/lost.css">
+{% endblock %}
+{% block start %}
     <main>
+      <h3>Page not found</h3>
       <video id="lostVidio" muted autoplay loop>
         <source src="/public/video/lost.mp4" type="video/mp4">
       </video>
     </main>
-
-<?php require __DIR__ . '/reusable/footer.php' ?>
+{% endblock %}

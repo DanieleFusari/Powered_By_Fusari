@@ -1,5 +1,4 @@
 <?php
-namespace App\commands;
 
 $fullUri = parse_url($_SERVER['REQUEST_URI']);
 $pathUri = $fullUri['path'];

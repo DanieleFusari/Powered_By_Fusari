@@ -1,11 +1,15 @@
 <?php
-require_once __DIR__ . '/../operations/load.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+require_once __DIR__ . '/../operations/database.php';
 
-/**************************************
-Before Running go to createTable Method and update what coloums you need first.
-**************************************/
 
 $dataBaseName = $_ENV['DATABASE_NAME'];
+
+/**************************************
+Before Running go to $table and update what coloums you need first. You can add as many tables as you like to this array $tables below.
+**************************************/
 
 $tables = [ "CREATE TABLE students (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -28,16 +32,22 @@ $tables = [ "CREATE TABLE students (
  Update the server username and password in the .env file first
 **************************************/
 $DBClass = new DataBase();
-// $DB = $DBClass->createDatabase($dataBaseName);
-$DB = $DBClass->connectTo($dataBaseName);
+/**************************************
+Run the below with Atom console cmd+i
+**************************************/
+$DB = $DBClass->createDatabase($dataBaseName);
 
 foreach ($tables as $table) {
     $DBClass->createTable($table, $DB);
 }
-
 
 /**************************************
  Extra Commands to Edit  database
 **************************************/
 // $DB->exec("DROP TABLE students");
 // $DB->exec("DELETE FROM students");
+
+
+/**************************************
+ GO TO Faker to create the data.
+**************************************/

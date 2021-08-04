@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* 404.twig */
-class __TwigTemplate_da77ca532bfd8fc85c9525730a7464eead66cc6ed280a890cf8bae7368051c3b extends Template
+/* login.twig */
+class __TwigTemplate_c2eaff85faac7729a422b3e2e6ab82d41772c145775c9611ffe6b178d41512f8 extends Template
 {
     private $source;
     private $macros = [];
@@ -39,36 +39,48 @@ class __TwigTemplate_da77ca532bfd8fc85c9525730a7464eead66cc6ed280a890cf8bae73680
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("/layout.twig", "404.twig", 1);
+        $this->parent = $this->loadTemplate("/layout.twig", "login.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 4
+    // line 2
     public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 5
-        echo "<link rel=\"stylesheet\" href=\"/public/css/lost.css\">
+        // line 3
+        echo "<link rel=\"stylesheet\" href=\"/public/css/login.css\">
 ";
     }
 
-    // line 7
+    // line 6
     public function block_start($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 8
-        echo "    <main>
-      <h3>Page not found</h3>
-      <video id=\"lostVidio\" muted autoplay loop>
-        <source src=\"/public/video/lost.mp4\" type=\"video/mp4\">
-      </video>
-    </main>
+        // line 7
+        echo "<!-- ***** Welcome Area Start ***** -->
+<main>
+  <div class=\"welcome-area\" id=\"welcome\">
+      <form class=\"form\" action=\"login\" method=\"post\">
+
+        <label for=\"name\">User Name</label>
+        <input id=\"name\" type=\"text\" name=\"userName\" value=\"DanieleFusari\">
+
+        <label for=\"email\">Email</label>
+        <input id=\"email\" type=\"email\" name=\"email\" value=\"daniele@fusari.co.uk\">
+
+        <label for=\"password\">Password</label>
+        <input id=\"password\" type=\"password\" name=\"password\" value=\"Fitty\">
+
+        <input type=\"submit\" value=\"Login\">
+      </form>
+  </div>
+</main>
 ";
     }
 
     public function getTemplateName()
     {
-        return "404.twig";
+        return "login.twig";
     }
 
     public function isTraitable()
@@ -78,11 +90,11 @@ class __TwigTemplate_da77ca532bfd8fc85c9525730a7464eead66cc6ed280a890cf8bae73680
 
     public function getDebugInfo()
     {
-        return array (  60 => 8,  56 => 7,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  60 => 7,  56 => 6,  51 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "404.twig", "/Users/danielefusari/Desktop/Projects/Powered_By_Fusari/public/404.twig");
+        return new Source("", "login.twig", "/Users/danielefusari/Desktop/Projects/Powered_By_Fusari/public/login.twig");
     }
 }

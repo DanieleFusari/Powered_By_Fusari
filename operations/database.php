@@ -1,5 +1,4 @@
 <?php
-// require_once __DIR__ . '/load.php';
 /**************************************
 Calls for DataBase creation
  https://www.w3schools.com/php/php_mysql_intro.asp

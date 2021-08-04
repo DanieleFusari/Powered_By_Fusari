@@ -1,0 +1,25 @@
+{% extends "/layout.twig" %}
+{% block css %}
+<link rel="stylesheet" href="/public/css/login.css">
+{% endblock %}
+
+{% block start %}
+<!-- ***** Welcome Area Start ***** -->
+<main>
+  <div class="welcome-area" id="welcome">
+      <form class="form" action="login" method="post">
+
+        <label for="name">User Name</label>
+        <input id="name" type="text" name="userName" value="DanieleFusari">
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" value="daniele@fusari.co.uk">
+
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" value="Fitty">
+
+        <input type="submit" value="Login">
+      </form>
+  </div>
+</main>
+{% endblock %}

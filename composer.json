@@ -16,6 +16,7 @@
 	"require": {
 		"fakerphp/faker": "^1.14",
 		"vlucas/phpdotenv": "^5.3",
-		"twig/twig": "^3.3"
+		"twig/twig": "^3.3",
+    "firebase/php-jwt": "^5.4"
 	}
 }

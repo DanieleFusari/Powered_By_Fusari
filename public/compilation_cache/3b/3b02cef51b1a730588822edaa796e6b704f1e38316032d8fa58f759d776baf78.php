@@ -27,6 +27,7 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
         $this->parent = false;
 
         $this->blocks = [
+            'css' => [$this, 'block_css'],
             'start' => [$this, 'block_start'],
         ];
     }
@@ -45,12 +46,15 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
     <title>Powered_By_Fusari</title>
 
     <!-- CSS -->
-    <link rel=\"stylesheet\" href=\"/public/css/master.css\">
     <link rel=\"stylesheet\" type=\"text/css\" href=\"/public/css/bootstrap.min.css\">
     <link rel=\"stylesheet\" type=\"text/css\" href=\"/public/css/font-awesome.css\">
     <link rel=\"stylesheet\" type=\"text/css\" href=\"/public/css/templatemo-art-factory.css\">
     <link rel=\"stylesheet\" type=\"text/css\" href=\"/public/css/owl-carousel.css\">
-  </head>
+    ";
+        // line 15
+        $this->displayBlock('css', $context, $blocks);
+        // line 17
+        echo "  </head>
   <body>
 
     <!-- ***** Preloader Start ***** -->
@@ -75,16 +79,16 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class=\"nav\">
-                            <li class=\"scroll-to-section\"><a href=\"#welcome\" class=\"active\">Home</a></li>
+                            <li class=\"scroll-to-section\"><a href=\"/\" class=\"active\">Home</a></li>
                             <li class=\"scroll-to-section\"><a href=\"https://danielefusari.co.uk/#about\">About</a></li>
                             <li class=\"scroll-to-section\"><a href=\"https://danielefusari.co.uk/#work\">Projects</a></li>
                             <li class=\"submenu\">
                                 <a href=\"javascript:;\">Drop Down</a>
                                 <ul>
-                                    <li><a href=\"\">About Us</a></li>
-                                    <li><a href=\"\">Features</a></li>
-                                    <li><a href=\"\">FAQ's</a></li>
-                                    <li><a href=\"\">Blog</a></li>
+                                    <li><a href=\"/login\">login</a></li>
+                                    <li><a href=\"https://danielefusari.co.uk/#work\">Work</a></li>
+                                    <li><a href=\"lost\">404</a></li>
+                                    <li><a href=\"https://danielefusari.co.uk/#contact\">Contact</a></li>
                                 </ul>
                             </li>
                             <li class=\"scroll-to-section\"><a href=\"https://danielefusari.co.uk/#contact\">Contact Us</a></li>
@@ -101,9 +105,9 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
     <!-- ***** Header Area End ***** -->
 
 ";
-        // line 66
+        // line 67
         $this->displayBlock('start', $context, $blocks);
-        // line 68
+        // line 69
         echo "
 
     <!-- ***** Footer Start ***** -->
@@ -152,7 +156,15 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
 ";
     }
 
-    // line 66
+    // line 15
+    public function block_css($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 16
+        echo "    ";
+    }
+
+    // line 67
     public function block_start($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -165,7 +177,7 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
 
     public function getDebugInfo()
     {
-        return array (  156 => 66,  107 => 68,  105 => 66,  38 => 1,);
+        return array (  168 => 67,  164 => 16,  160 => 15,  111 => 69,  109 => 67,  57 => 17,  55 => 15,  39 => 1,);
     }
 
     public function getSourceContext()

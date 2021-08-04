@@ -1,0 +1,19 @@
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 600px;
+  padding: 60px 100px;
+  border: solid .5px gray;
+  box-shadow: 10px 10px 5px gray;
+}
+
+.form input {
+  margin-bottom: 20px;
+}
+
+.form input[type="submit"] {
+  width: 100px;
+  margin-left: auto;
+}

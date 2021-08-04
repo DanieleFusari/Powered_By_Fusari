@@ -1,6 +1,6 @@
 <?php
 
-$operations = new App\controller\display();
+// $ops = new App\controller\operations();
 
 
 echo $twig->render('home.twig', ['name' => 'Daniele']);

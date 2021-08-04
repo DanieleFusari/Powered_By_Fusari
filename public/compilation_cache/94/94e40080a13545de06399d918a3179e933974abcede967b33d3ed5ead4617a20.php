@@ -48,6 +48,7 @@ class __TwigTemplate_4777e1051a2d15bd23a1d89e007fb5c4f8ac543fa5ab7bc1488fbfcacd8
         $macros = $this->macros;
         // line 4
         echo "<!-- ***** Welcome Area Start ***** -->
+
 <div class=\"welcome-area\" id=\"welcome\">
 
     <!-- ***** Header Text Start ***** -->
@@ -58,7 +59,7 @@ class __TwigTemplate_4777e1051a2d15bd23a1d89e007fb5c4f8ac543fa5ab7bc1488fbfcacd8
                     <h1>Powered_By_Fusari <strong>An Easy FrameWork</strong></h1>
                     <p>This is a simple FrameWork,  Created to standerdise all my projects.
                     <br>
-                    <strong> Support packages </strong> Twig<br>
+                    <strong> Support packages </strong> Twig <br>
                     </p>
                     <a href=\"https://danielefusari.co.uk/#about\" class=\"main-button-slider\">Find Out More</a>
                 </div>

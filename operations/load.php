@@ -46,14 +46,13 @@ foreach (glob(__DIR__ . '/*') as $ops) {
  Load the corerct controller to the to match the webpage.
 ***************************************************************/
 if ($pathUri == '/') {
-    $pathUri = '/home.php';
+    $pathUri = '/home';
 }
 
 $p404 = false;
 foreach (glob(__DIR__ . '/../controllers/*') as $con) {
-    if (str_ends_with($con, $pathUri)) {
-        var_dump($pathUri);
-        require __DIR__ . '/../controllers/'. $pathUri;
+    if (str_contains($con, $pathUri)) {
+        require __DIR__ . '/../controllers/'. $pathUri . '.php';
         $p404 = true;
     }
 }

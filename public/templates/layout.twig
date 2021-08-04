@@ -8,11 +8,12 @@
     <title>Powered_By_Fusari</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/public/css/master.css">
     <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/public/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="/public/css/templatemo-art-factory.css">
     <link rel="stylesheet" type="text/css" href="/public/css/owl-carousel.css">
+    {% block css %}
+    {% endblock %}
   </head>
   <body>
 
@@ -38,16 +39,16 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="#welcome" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
                             <li class="scroll-to-section"><a href="https://danielefusari.co.uk/#about">About</a></li>
                             <li class="scroll-to-section"><a href="https://danielefusari.co.uk/#work">Projects</a></li>
                             <li class="submenu">
                                 <a href="javascript:;">Drop Down</a>
                                 <ul>
-                                    <li><a href="">About Us</a></li>
-                                    <li><a href="">Features</a></li>
-                                    <li><a href="">FAQ's</a></li>
-                                    <li><a href="">Blog</a></li>
+                                    <li><a href="/login">login</a></li>
+                                    <li><a href="https://danielefusari.co.uk/#work">Work</a></li>
+                                    <li><a href="lost">404</a></li>
+                                    <li><a href="https://danielefusari.co.uk/#contact">Contact</a></li>
                                 </ul>
                             </li>
                             <li class="scroll-to-section"><a href="https://danielefusari.co.uk/#contact">Contact Us</a></li>

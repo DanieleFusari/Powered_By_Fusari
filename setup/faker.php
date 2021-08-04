@@ -1,5 +1,9 @@
 <?php
-require_once __DIR__ . '/../operations/load.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+require_once __DIR__ . '/../operations/database.php';
+
 /*********************************************************
  https://fakerphp.github.io/formatters/miscellaneous/
 *************************************************************/
@@ -7,8 +11,9 @@ require_once __DIR__ . '/../operations/load.php';
 $DB = new DataBase();
 $DB = $DB->connectTo($_ENV['DATABASE_NAME']);
 $faker = Faker\Factory::create('en_GB');
+$numberOfRecords = 50;
 
-for ($i=0; $i <50; $i++) {
+for ($i=0; $i <$numberOfRecords; $i++) {
     try {
         $uni_id  = $faker->unique()->randomNumber(5);
         $firstname  = $faker->firstname;
