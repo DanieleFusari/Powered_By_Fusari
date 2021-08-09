@@ -9,6 +9,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ operations/load.php [QSA]
 
+
 <FilesMatch "\.(db)$">
 Order allow,deny
 Deny from all

@@ -37,6 +37,7 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
         $macros = $this->macros;
         // line 1
         echo "<!DOCTYPE html>
+
 <html lang=\"en\" dir=\"ltr\">
   <head>
     <meta charset=\"utf-8\">
@@ -51,12 +52,11 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
     <link rel=\"stylesheet\" type=\"text/css\" href=\"/public/css/templatemo-art-factory.css\">
     <link rel=\"stylesheet\" type=\"text/css\" href=\"/public/css/owl-carousel.css\">
     ";
-        // line 15
+        // line 16
         $this->displayBlock('css', $context, $blocks);
-        // line 17
+        // line 18
         echo "  </head>
   <body>
-
     <!-- ***** Preloader Start ***** -->
     <div id=\"preloader\">
         <div class=\"jumper\">
@@ -86,7 +86,8 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
                                 <a href=\"javascript:;\">Drop Down</a>
                                 <ul>
                                     <li><a href=\"/login\">login</a></li>
-                                    <li><a href=\"https://danielefusari.co.uk/#work\">Work</a></li>
+                                    <li><a href=\"/login?logout=true\">logout</a></li>
+                                    <li><a href=\"/play\">play</a></li>
                                     <li><a href=\"lost\">404</a></li>
                                     <li><a href=\"https://danielefusari.co.uk/#contact\">Contact</a></li>
                                 </ul>
@@ -105,9 +106,9 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
     <!-- ***** Header Area End ***** -->
 
 ";
-        // line 67
+        // line 68
         $this->displayBlock('start', $context, $blocks);
-        // line 69
+        // line 70
         echo "
 
     <!-- ***** Footer Start ***** -->
@@ -156,15 +157,15 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
 ";
     }
 
-    // line 15
+    // line 16
     public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 16
+        // line 17
         echo "    ";
     }
 
-    // line 67
+    // line 68
     public function block_start($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -177,7 +178,7 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
 
     public function getDebugInfo()
     {
-        return array (  168 => 67,  164 => 16,  160 => 15,  111 => 69,  109 => 67,  57 => 17,  55 => 15,  39 => 1,);
+        return array (  169 => 68,  165 => 17,  161 => 16,  112 => 70,  110 => 68,  58 => 18,  56 => 16,  39 => 1,);
     }
 
     public function getSourceContext()

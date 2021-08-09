@@ -1,5 +1,4 @@
 <?php
-
 /* *********************************************************************
 YouTube: https://www.youtube.com/watch?v=7Q17ubqLfaM
 Test:    https://jwt.io/
@@ -9,10 +8,26 @@ JWT payload codes: https://datatracker.ietf.org/doc/html/rfc7519#section-4.1
 ******************************************************************** */
 use Firebase\JWT\JWT;
 
-class Auth
+class Auth extends CRUD
 {
+    public $JWT;
+    public $loggedIn;
+    public $userName;
+    public $level;
+
     public function __construct()
     {
+        if (isset($_COOKIE['auth'])) {
+            $this->JWT = $this->decode();
+            $this->loggedIn = $this->JWT->auth;
+            $this->userName = $this->JWT->userName;
+            $this->level = $this->JWT->level;
+        } else {
+            $this->JWT = [];
+            $this->loggedIn = false;
+            $this->userName = 'Guest';
+            $this->level = 0;
+        }
     }
 
     public function login($userName, $password)
@@ -33,9 +48,8 @@ class Auth
 
             $jwt = JWT::encode($payload, $_ENV['Security_Key'], 'HS256');
             setcookie('auth', $jwt, time() + 3600, '/');
-            header('Location: /');
         } else {
-            header('Location: /');
+            header('Location: /login');
         }
     }
 
@@ -46,13 +60,23 @@ class Auth
         return JWT::decode($_COOKIE['auth'], $_ENV['Security_Key'], ['HS256']);
     }
 
-    public function auth()
+
+    public function ipcheck()
     {
-        $user = decode();
-        if ($user->auth) {
-            echo true;
-        } else {
-            echo fales;
+        $allowedIps = ['82.9.190.178', '::1'];
+        $userIp = $_SERVER['REMOTE_ADDR'];
+
+        if (!in_array($userIp, $allowedIps)) {
+            exit('Unauthorized');
+        }
+    }
+
+    public function lockPage()
+    {
+        if (!$this->loggedIn) {
+            $this->setMessage('not logged in ', 360);
+            header('Location: /login');
+            exit();
         }
     }
 }

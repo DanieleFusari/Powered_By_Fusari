@@ -6,37 +6,22 @@ Calls for DataBase creation
 class DataBase
 {
     private $servername;
+    public $dbname;
     private $username;
     private $password;
 
-    public function __construct($servername = null, $username = null, $password = null)
+    public function __construct($servername = null, $dbname = null, $username = null, $password = null)
     {
         $this->servername = $servername ?? $_ENV['DATABASE_SERVERNAME'];
         $this->username = $username ?? $_ENV['DATABASE_USER'];
+        $this->dbname = $dbname ?? $_ENV['DATABASE_NAME'];
         $this->password = $password ?? $_ENV['DATABASE_PASSWORD'];
     }
 
-    public function createDatabase($dbname)
+    public function connectTo()
     {
         try {
-            $conn = new PDO("mysql:host=$this->servername", $this->username, $this->password);
-            // set the PDO error mode to exception
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "CREATE DATABASE $dbname";
-            // use exec() because no results are returned
-            $conn->exec($sql);
-            echo "Database " . $dbname . " created successfully... \n <br>";
-            return $conn;
-        } catch (PDOException $e) {
-            echo "Create DataBase failed: " . $e->getMessage();
-            die();
-        }
-    }
-
-    public function connectTo($dbname)
-    {
-        try {
-            $conn = new PDO("mysql:host=$this->servername;dbname=$dbname", $this->username, $this->password);
+            $conn = new PDO("mysql:host=$this->servername;dbname=$this->$dbname", $this->username, $this->password);
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             echo "Connected successfully to " . $dbname . "...\n <br>";
@@ -44,20 +29,6 @@ class DataBase
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
             die();
-        }
-    }
-
-    /**************************************
-     Update what coiloums you need. If not here look at
-      https://www.mysqltutorial.org/mysql-data-types.aspx
-    **************************************/
-    public function createTable($sql, $DB)
-    {
-        try {
-            $DB->exec($sql);
-            echo "Created Table(s)... \n <br>";
-        } catch (\Exception $e) {
-            echo "Creating Table failed: " . $e->getMessage();
         }
     }
 }

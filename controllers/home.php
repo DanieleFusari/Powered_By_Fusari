@@ -1,6 +1,5 @@
 <?php
+$auth = new auth;
 
-// $ops = new App\controller\operations();
 
-
-echo $twig->render('home.twig', ['name' => 'Daniele']);
+echo $twig->render('/home.twig', (array) $auth->JWT);

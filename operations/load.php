@@ -40,22 +40,19 @@ foreach (glob(__DIR__ . '/*') as $ops) {
     }
 }
 
-
-
 /*  ***********************************************************
  Load the corerct controller to the to match the webpage.
-***************************************************************/
-if ($pathUri == '/') {
-    $pathUri = '/home';
+************************************************************** */
+
+$controllerName = ltrim($_SERVER['REDIRECT_URL'] . '.php', '/');
+$controllers = scandir(__DIR__ .  '/../controllers');
+if ($controllerName === '.php') {
+    $controllerName = $_ENV['DEFAULT_HOME_PAGE'] . '.php';
 }
 
-$p404 = false;
-foreach (glob(__DIR__ . '/../controllers/*') as $con) {
-    if (str_contains($con, $pathUri)) {
-        require __DIR__ . '/../controllers/'. $pathUri . '.php';
-        $p404 = true;
-    }
-}
-if (!$p404) {
+if (in_array($controllerName, $controllers)) {
+    require __DIR__ . '/../controllers/' . $controllerName;
+    $p404 = true;
+} else {
     require __DIR__ . '/../controllers/404.php';
 }

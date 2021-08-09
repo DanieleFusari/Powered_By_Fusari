@@ -59,9 +59,24 @@ class __TwigTemplate_c2eaff85faac7729a422b3e2e6ab82d41772c145775c9611ffe6b178d41
         // line 7
         echo "<!-- ***** Welcome Area Start ***** -->
 <main>
-  <div class=\"welcome-area\" id=\"welcome\">
-      <form class=\"form\" action=\"login\" method=\"post\">
 
+
+
+
+  <div class=\"welcome-area\" id=\"welcome\">
+
+      <form class=\"form\" action=\"login\" method=\"post\">
+        ";
+        // line 16
+        if (($context["mess"] ?? null)) {
+            // line 17
+            echo "        <h3>";
+            echo twig_escape_filter($this->env, ($context["mess"] ?? null), "html", null, true);
+            echo "</h3>
+        ";
+        }
+        // line 19
+        echo "
         <label for=\"name\">User Name</label>
         <input id=\"name\" type=\"text\" name=\"userName\" value=\"DanieleFusari\">
 
@@ -90,7 +105,7 @@ class __TwigTemplate_c2eaff85faac7729a422b3e2e6ab82d41772c145775c9611ffe6b178d41
 
     public function getDebugInfo()
     {
-        return array (  60 => 7,  56 => 6,  51 => 3,  47 => 2,  36 => 1,);
+        return array (  79 => 19,  73 => 17,  71 => 16,  60 => 7,  56 => 6,  51 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()

@@ -6,8 +6,16 @@
 {% block start %}
 <!-- ***** Welcome Area Start ***** -->
 <main>
+
+
+
+
   <div class="welcome-area" id="welcome">
+
       <form class="form" action="login" method="post">
+        {% if mess %}
+        <h3>{{mess}}</h3>
+        {% endif %}
 
         <label for="name">User Name</label>
         <input id="name" type="text" name="userName" value="DanieleFusari">
