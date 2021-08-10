@@ -85,9 +85,19 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
                             <li class=\"submenu\">
                                 <a href=\"javascript:;\">Drop Down</a>
                                 <ul>
-                                    <li><a href=\"/login\">login</a></li>
-                                    <li><a href=\"/login?logout=true\">logout</a></li>
-                                    <li><a href=\"/play\">play</a></li>
+                                  ";
+        // line 48
+        if (($context["loggedIn"] ?? null)) {
+            // line 49
+            echo "                                      <li><a href=\"/login?logout=true\">logout</a></li>
+                                  ";
+        } else {
+            // line 51
+            echo "                                      <li><a href=\"/login\">login</a></li>
+                                  ";
+        }
+        // line 53
+        echo "                                    <li><a href=\"/play\">play</a></li>
                                     <li><a href=\"lost\">404</a></li>
                                     <li><a href=\"https://danielefusari.co.uk/#contact\">Contact</a></li>
                                 </ul>
@@ -106,9 +116,9 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
     <!-- ***** Header Area End ***** -->
 
 ";
-        // line 68
+        // line 71
         $this->displayBlock('start', $context, $blocks);
-        // line 70
+        // line 73
         echo "
 
     <!-- ***** Footer Start ***** -->
@@ -165,7 +175,7 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
         echo "    ";
     }
 
-    // line 68
+    // line 71
     public function block_start($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -176,9 +186,14 @@ class __TwigTemplate_48f1a736e9b9f7dedcfaff322b87efda5d2e2de910f2ad827addda41007
         return "/layout.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  169 => 68,  165 => 17,  161 => 16,  112 => 70,  110 => 68,  58 => 18,  56 => 16,  39 => 1,);
+        return array (  179 => 71,  175 => 17,  171 => 16,  122 => 73,  120 => 71,  100 => 53,  96 => 51,  92 => 49,  90 => 48,  58 => 18,  56 => 16,  39 => 1,);
     }
 
     public function getSourceContext()

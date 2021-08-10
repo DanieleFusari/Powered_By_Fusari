@@ -69,7 +69,7 @@ Update what coloums you need. If not here look at   https://www.mysqltutorial.or
 
 $tables = [ "CREATE TABLE students (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  user_id VARCHAR(12) UNIQUE,
+  uni_id VARCHAR(12) UNIQUE,
   firstname TEXT NOT NULL,
   lastname TEXT NOT NULL,
   email VARCHAR(50) NOT NULL UNIQUE,

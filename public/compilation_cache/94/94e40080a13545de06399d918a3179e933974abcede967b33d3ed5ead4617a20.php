@@ -68,10 +68,10 @@ class __TwigTemplate_4777e1051a2d15bd23a1d89e007fb5c4f8ac543fa5ab7bc1488fbfcacd8
                 <div class=\"left-text col-lg-6 col-md-6 col-sm-12 col-xs-12\" data-scroll-reveal=\"enter left move 30px over 0.6s after 0.4s\">
                   ";
         // line 15
-        if (($context["auth"] ?? null)) {
+        if (($context["loggedIn"] ?? null)) {
             // line 16
             echo "                      <h3 class=\"logwell\">Welcome ";
-            echo twig_escape_filter($this->env, ($context["userName"] ?? null), "html", null, true);
+            echo twig_escape_filter($this->env, (($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 = ($context["JWT"] ?? null)) && is_array($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4) || $__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 instanceof ArrayAccess ? ($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4["userName"] ?? null) : null), "html", null, true);
             echo "</h3>
                   ";
         } else {

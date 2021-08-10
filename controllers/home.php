@@ -2,4 +2,8 @@
 $auth = new auth;
 
 
-echo $twig->render('/home.twig', (array) $auth->JWT);
+$data = [
+  'loggedIn' => $auth->loggedIn,
+  'JWT' => (array) $auth->JWT
+];
+echo $twig->render('/home.twig', $data);

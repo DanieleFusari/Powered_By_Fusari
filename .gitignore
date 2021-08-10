@@ -6,5 +6,4 @@
 .env
 vendor/
 test*
-/vendor
 .env

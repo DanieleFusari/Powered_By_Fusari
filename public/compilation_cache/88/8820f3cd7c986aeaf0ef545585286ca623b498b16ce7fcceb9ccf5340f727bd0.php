@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* 404.twig */
-class __TwigTemplate_da77ca532bfd8fc85c9525730a7464eead66cc6ed280a890cf8bae7368051c3b extends Template
+/* play.twig */
+class __TwigTemplate_b82d2c103fdaaa432b458ce01fc9d3da9ef81af78fcbb9b4273bedd9b50eb6d1 extends Template
 {
     private $source;
     private $macros = [];
@@ -39,37 +39,47 @@ class __TwigTemplate_da77ca532bfd8fc85c9525730a7464eead66cc6ed280a890cf8bae73680
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("/layout.twig", "404.twig", 1);
+        $this->parent = $this->loadTemplate("/layout.twig", "play.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
+    // line 2
     public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 4
-        echo "<link rel=\"stylesheet\" href=\"/public/css/lost.css\">
+        // line 3
+        echo "<link rel=\"stylesheet\" href=\"/public/css/login.css\">
 ";
     }
 
-    // line 8
+    // line 6
     public function block_start($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 9
-        echo "    <main>
-      <div class=\"welcome-area\" id=\"welcome\">
-        <video id=\"lostVidio\" muted autoplay loop>
-          <source src=\"/public/video/lost.mp4\" type=\"video/mp4\">
-        </video>
-      </div>
-    </main>
+        // line 7
+        echo "<!-- ***** Welcome Area Start ***** -->
+<main>
+
+
+
+
+  <div class=\"welcome-area\" id=\"welcome\">
+    <h1>Welcome ";
+        // line 14
+        echo twig_escape_filter($this->env, ($context["userName"] ?? null), "html", null, true);
+        echo ",  to the test page </h1>
+
+  </div>
+
+
+
+</main>
 ";
     }
 
     public function getTemplateName()
     {
-        return "404.twig";
+        return "play.twig";
     }
 
     public function isTraitable()
@@ -79,11 +89,11 @@ class __TwigTemplate_da77ca532bfd8fc85c9525730a7464eead66cc6ed280a890cf8bae73680
 
     public function getDebugInfo()
     {
-        return array (  60 => 9,  56 => 8,  51 => 4,  47 => 3,  36 => 1,);
+        return array (  69 => 14,  60 => 7,  56 => 6,  51 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "404.twig", "/Users/danielefusari/Desktop/Projects/Powered_By_Fusari/public/404.twig");
+        return new Source("", "play.twig", "/Users/danielefusari/Desktop/Projects/Powered_By_Fusari/public/play.twig");
     }
 }

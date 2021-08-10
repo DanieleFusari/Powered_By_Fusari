@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* /test.twig */
+/* test.twig */
 class __TwigTemplate_42a58b85ac45da388fd7b312ef20e0a4144c028d9838a8a2e5c75fb5adc9d18d extends Template
 {
     private $source;
@@ -39,31 +39,47 @@ class __TwigTemplate_42a58b85ac45da388fd7b312ef20e0a4144c028d9838a8a2e5c75fb5adc
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("/layout.twig", "/test.twig", 1);
+        $this->parent = $this->loadTemplate("/layout.twig", "test.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
+    // line 2
     public function block_css($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 4
-        echo "<link rel=\"stylesheet\" type=\"text/css\"  href=\"/public/css/test.css\">
+        // line 3
+        echo "<link rel=\"stylesheet\" href=\"/public/css/login.css\">
 ";
     }
 
-    // line 7
+    // line 6
     public function block_start($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 8
-        echo "<p class=\"red\"> Hello word </p>  
+        // line 7
+        echo "<!-- ***** Welcome Area Start ***** -->
+<main>
+
+
+
+
+  <div class=\"welcome-area\" id=\"welcome\">
+    <h1>Welcome ";
+        // line 14
+        echo twig_escape_filter($this->env, ($context["userName"] ?? null), "html", null, true);
+        echo ",  to the test page </h1>
+
+  </div>
+
+
+
+</main>
 ";
     }
 
     public function getTemplateName()
     {
-        return "/test.twig";
+        return "test.twig";
     }
 
     public function isTraitable()
@@ -73,11 +89,11 @@ class __TwigTemplate_42a58b85ac45da388fd7b312ef20e0a4144c028d9838a8a2e5c75fb5adc
 
     public function getDebugInfo()
     {
-        return array (  60 => 8,  56 => 7,  51 => 4,  47 => 3,  36 => 1,);
+        return array (  69 => 14,  60 => 7,  56 => 6,  51 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "/test.twig", "/Users/danielefusari/Desktop/Projects/Powered_By_Fusari/public/test.twig");
+        return new Source("", "test.twig", "/Users/danielefusari/Desktop/Projects/Powered_By_Fusari/public/test.twig");
     }
 }

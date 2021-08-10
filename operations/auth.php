@@ -63,18 +63,19 @@ class Auth extends CRUD
 
     public function ipcheck()
     {
-        $allowedIps = ['82.9.190.178', '::1'];
+        $allowedIps = explode(" ", $_ENV['IP_ADDRESS']);
         $userIp = $_SERVER['REMOTE_ADDR'];
 
         if (!in_array($userIp, $allowedIps)) {
-            exit('Unauthorized');
+            header('Location: /');
+            exit();
         }
     }
 
     public function lockPage()
     {
         if (!$this->loggedIn) {
-            $this->setMessage('not logged in ', 360);
+            $this->setMessage('Please log in..', 3);
             header('Location: /login');
             exit();
         }

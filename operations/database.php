@@ -5,10 +5,10 @@ Calls for DataBase creation
 **************************************/
 class DataBase
 {
-    private $servername;
+    public $servername;
     public $dbname;
-    private $username;
-    private $password;
+    public $username;
+    public $password;
 
     public function __construct($servername = null, $dbname = null, $username = null, $password = null)
     {
@@ -21,10 +21,14 @@ class DataBase
     public function connectTo()
     {
         try {
-            $conn = new PDO("mysql:host=$this->servername;dbname=$this->$dbname", $this->username, $this->password);
+            $conn = new PDO(
+                "mysql:host=$this->servername;dbname=$this->dbname",
+                $this->username,
+                $this->password
+            );
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connected successfully to " . $dbname . "...\n <br>";
+            echo "Connected successfully to " . $this->dbname . "...\n <br>";
             return $conn;
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
@@ -32,3 +36,21 @@ class DataBase
         }
     }
 }
+
+
+/* **********************************************************
+Some examples of PHP SQL  Database commands.
+********************************************************* */
+//
+// $results  = $DB->query("SELECT * FROM students");
+// $results = $results->fetchAll(PDO::FETCH_ASSOC);
+//
+// $inv = $db->query('SELECT * FROM students ORDER BY invoice DESC LIMIT 1');
+// $inv = $inv->fetch();
+//
+// $account = $db->prepare("SELECT * FROM accounts WHERE account = :acc");
+// $account->bindParam(':acc', $acc);
+// $account->execute();
+// $account = $account->fetchAll(PDO::FETCH_ASSOC);
+//
+// $db->exec("INSERT INTO invoices VALUES(null, '$account', '$company_name', '$invoice_date')");
