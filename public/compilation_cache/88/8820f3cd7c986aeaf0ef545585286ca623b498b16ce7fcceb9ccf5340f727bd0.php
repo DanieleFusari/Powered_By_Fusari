@@ -48,7 +48,7 @@ class __TwigTemplate_b82d2c103fdaaa432b458ce01fc9d3da9ef81af78fcbb9b4273bedd9b50
     {
         $macros = $this->macros;
         // line 3
-        echo "<link rel=\"stylesheet\" href=\"/public/css/login.css\">
+        echo "<link rel=\"stylesheet\" href=\"/public/css/play.css\">
 ";
     }
 
