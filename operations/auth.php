@@ -32,7 +32,9 @@ class Auth extends CRUD
 
     public function login($userName, $password)
     {
-        $dataBasePassword = '$2y$10$tp9zzruvUEFBwL/VoiJSaerYoWUDVisCBK45uQu/1pzZU8AzUHCtq';
+        // Need a database here to get the oassword using the user name
+        $dataBasePassword = '$2y$10$SkNh5cIoUvthWky4/E0qb.ZoRwbBg9G6gb6NHq9EvtruA58XYoRKa';
+        // deafult password is 'password'
 
         if (password_verify($password, $dataBasePassword)) {
             $payload = [
