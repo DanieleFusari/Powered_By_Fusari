@@ -42,17 +42,22 @@ foreach (glob(__DIR__ . '/*') as $ops) {
 
 /*  ***********************************************************
  Load the corerct controller to the to match the webpage.
+If the web page is / home page then this will correct to default
+home page e.g home.php $_ENV['DEFAULT_HOME_PAGE']
 ************************************************************** */
-
 $controllerName = ltrim($_SERVER['REDIRECT_URL'] . '.php', '/');
 $controllers = scandir(__DIR__ .  '/../controllers');
 if ($controllerName === '.php') {
     $controllerName = $_ENV['DEFAULT_HOME_PAGE'] . '.php';
 }
 
+$public = scandir(__DIR__ .  '/../public');
+$twigpage = ltrim($_SERVER['REDIRECT_URL'], '/') . '.twig';
+
 if (in_array($controllerName, $controllers)) {
     require __DIR__ . '/../controllers/' . $controllerName;
-    $p404 = true;
+} elseif (in_array($twigpage, $public)) {
+    echo $twig->render($twigpage, []);
 } else {
-    require __DIR__ . '/../controllers/404.php';
+    echo $twig->render('404.twig', []);
 }

@@ -5,7 +5,8 @@ $dotenv->load();
 
 /**************************************
  Commands to cerate the database
- Update the server username and password in the .env first, then update the $tables below at the bottom.
+ Update the server username and password in the .env first, then update the
+ $tables below at the bottom.
 Move right to the bottom to RUN the commannds.
 **************************************/
 

@@ -7,3 +7,5 @@
 vendor/
 test*
 .env
+public/compilation_cache
+.DS_Store

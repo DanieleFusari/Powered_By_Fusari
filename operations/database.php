@@ -41,8 +41,8 @@ class DataBase
 /* **********************************************************
 Some examples of PHP SQL  Database commands.
 ********************************************************* */
-//
-// $results  = $DB->query("SELECT * FROM students");
+// $db = $DB->connectTo();
+// $results  = $db->query("SELECT * FROM students");
 // $results = $results->fetchAll(PDO::FETCH_ASSOC);
 //
 // $inv = $db->query('SELECT * FROM students ORDER BY invoice DESC LIMIT 1');
