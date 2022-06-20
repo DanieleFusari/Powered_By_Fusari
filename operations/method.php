@@ -1,6 +1,6 @@
 <?php
 
-class CRUD
+class Method
 {
     public array $get;
     public array $post;
@@ -23,24 +23,5 @@ class CRUD
         } else {
             $this->get =  [];
         }
-    }
-
-    public function setMessage($cookie_value, $time, $name = 'message')
-    {
-        setcookie($name, $cookie_value, time() + $time, "/");
-    }
-
-    public function getMessage($name = 'message')
-    {
-        if (isset($_COOKIE[$name])) {
-            return   $_COOKIE[$name];
-        } else {
-            return '';
-        }
-    }
-
-    public function delcookie($name = 'message')
-    {
-        setcookie($name, "", time() - 3600);
     }
 }

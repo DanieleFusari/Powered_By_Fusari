@@ -14,9 +14,11 @@
     }
   },
 	"require": {
-		"fakerphp/faker": "^1.14",
 		"vlucas/phpdotenv": "^5.3",
 		"twig/twig": "^3.3",
-    "firebase/php-jwt": "^5.4"
+    "firebase/php-jwt": "^5.4",
+    "swiftmailer/swiftmailer": "^6.0",
+    "paypal/paypal-checkout-sdk": "^1.0",
+    "mpdf/mpdf": "^8.0"
 	}
 }

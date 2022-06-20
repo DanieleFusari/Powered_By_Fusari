@@ -1,6 +1,5 @@
 <?php
 
-$crud = new CRUD;
 $auth = new Auth;
 $DB = new DataBase;
 

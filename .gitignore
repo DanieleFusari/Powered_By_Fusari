@@ -1,4 +1,6 @@
+######################
 # Logs and databases #
+######################
 *.log
 *.sql
 *.sqlite
@@ -7,5 +9,8 @@
 vendor/
 test*
 .env
+.git
 public/compilation_cache
 .DS_Store
+# setup
+composer.lock
