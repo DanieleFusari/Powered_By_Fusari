@@ -1,8 +1,16 @@
 <?php
+require_once __DIR__ . '/../vendor/autoload.php';
+
 /**************************************
 Calls for DataBase creation
  https://www.w3schools.com/php/php_mysql_intro.asp
 **************************************/
+
+session_start();
+if (!isset($_SESSION['TB'])) {
+    $_SESSION['TB'] = [];
+}
+
 class DataBase
 {
     public $servername;
@@ -28,7 +36,7 @@ class DataBase
             );
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connected successfully to " . $this->dbname . "...\n <br>";
+            // echo "Connected successfully to " . $this->dbname . "...\n <br>";
             return $conn;
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
@@ -37,11 +45,11 @@ class DataBase
     }
 }
 
-
 /* **********************************************************
 Some examples of PHP SQL  Database commands.
 ********************************************************* */
 // $db = $DB->connectTo();
+
 // $results  = $db->query("SELECT * FROM students");
 // $results = $results->fetchAll(PDO::FETCH_ASSOC);
 //
@@ -54,3 +62,5 @@ Some examples of PHP SQL  Database commands.
 // $account = $account->fetchAll(PDO::FETCH_ASSOC);
 //
 // $db->exec("INSERT INTO invoices VALUES(null, '$account', '$company_name', '$invoice_date')");
+
+// $db->exec("UPDATE cards SET sold = 1, address = 'my house' WHERE card_code IN('D077'")

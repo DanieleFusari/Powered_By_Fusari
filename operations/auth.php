@@ -8,7 +8,7 @@ JWT payload codes: https://datatracker.ietf.org/doc/html/rfc7519#section-4.1
 ******************************************************************** */
 use Firebase\JWT\JWT;
 
-class Auth extends CRUD
+class Auth
 {
     public $JWT;
     public $loggedIn;
@@ -33,10 +33,10 @@ class Auth extends CRUD
     public function login($userName, $password)
     {
         // Need a database here to get the oassword using the user name
-        $dataBasePassword = '$2y$10$SkNh5cIoUvthWky4/E0qb.ZoRwbBg9G6gb6NHq9EvtruA58XYoRKa';
-        // deafult password is 'password'
+        // $dataBasePassword = password_hash($_ENV['DEFAULT_LOGIN_PASSWORD'], PASSWORD_DEFAULT);
+        // deafult password is SET IN THE .ENV FILE.
 
-        if (password_verify($password, $dataBasePassword)) {
+        if ($userName == $_ENV['DEFAULT_LOGIN_USERNAME'] && password_verify($password, $_ENV['DEFAULT_LOGIN_PASSWORD'])) {
             $payload = [
             "iss" => $_SERVER['SERVER_NAME'], // "iss" (Issuer) Claim
             "sub" => 'Logged in',             // "sub" (Subject) Claim
@@ -49,9 +49,12 @@ class Auth extends CRUD
           ];
 
             $jwt = JWT::encode($payload, $_ENV['Security_Key'], 'HS256');
+            $web = $_ENV['WEB_SITE_ADDRESS'];
             setcookie('auth', $jwt, time() + 3600, '/');
         } else {
+            setcookie('message', 'login failed', time() + 15, '/');
             header('Location: /login');
+            exit();
         }
     }
 
@@ -65,11 +68,12 @@ class Auth extends CRUD
 
     public function ipcheck()
     {
-        $allowedIps = explode(" ", $_ENV['IP_ADDRESS']);
+        $allowedIps = explode(", ", $_ENV['IP_ADDRESS']);
         $userIp = $_SERVER['REMOTE_ADDR'];
 
         if (!in_array($userIp, $allowedIps)) {
-            header('Location: /');
+            header('Status: 403 You Do Not Have Access To This Page');
+            echo "<h1>Status: 403 You Do Not Have Access To This Page</h1>";
             exit();
         }
     }
@@ -77,7 +81,7 @@ class Auth extends CRUD
     public function lockPage()
     {
         if (!$this->loggedIn) {
-            $this->setMessage('Please log in..', 3);
+            setcookie('message', 'Please log in..', time() + 15, '/');
             header('Location: /login');
             exit();
         }

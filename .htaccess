@@ -9,18 +9,45 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ operations/load.php [QSA]
 
-
-<FilesMatch "\.(db)$">
-Order allow,deny
-Deny from all
-</FilesMatch>
-
-RedirectMatch 403 ^/controllers/?$
-RedirectMatch 403 ^/operations/?$
-RedirectMatch 403 ^/setup/?$
-RedirectMatch 403 ^/vendor/?$
-RedirectMatch 403 ^/views/?$
+RedirectMatch ^/controllers/?$ /
+RedirectMatch ^/operations/$ /
+RedirectMatch .env  /
+RedirectMatch .gitignore  /
+RedirectMatch ^/setup/?$ /
+RedirectMatch ^/vendor/?$ /
+RedirectMatch ^/public/?$ /
+RedirectMatch ^/views/?$ /
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [NC,L]
+
+
+### block files which needs to be hidden, specify .example extension of the file
+<Files ~ "\.(env|json|config.js|md|gitignore|gitattributes|lock)$">
+    Order allow,deny
+    Deny from all
+</Files>
+
+
+######### THIS IS SO HOSTIGER USES PHP 8 ON THE SUBDOMAIN. ######
+#<FilesMatch "\.(php4|php5|php3|php2|php7|php|phtml)$">
+# SetHandler application/x-lsphp80
+#</FilesMatch>
+
+
+######### ######### info only ######### #########
+# To redirect the contents of a subdirectory to another domain but in the same subdirectory
+# Redirect 301 /subdirectory http://www.anotherdomain.com/subdirectory
+
+
+######### Lock down a file folder #########
+# <FilesMatch "\.(db)$">
+#  Order allow,deny
+#  Deny from all
+# </FilesMatch>
+
+# <files .env>
+#  order allow,deny
+#  deny from all
+# </files>
